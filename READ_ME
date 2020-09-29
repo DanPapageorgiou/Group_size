@@ -1,0 +1,19 @@
+This repository contains code associated to the analysis run for the manuscript: “Group size and composition influence collective movement in a highly social terrestrial bird” 
+by Papageorgiou and Farine. This work investigates how group size and composition influence collective movement in groups of vulturine guineafowl (Accryllium vulturinum) 
+which range freely in the Kenyan savannah. The raw GPS data that were collected for this study are stored in the Movebank data repository: 
+https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study475851705
+
+The first script (1.get&prepare_data.R) includes the steps for downloading data from movebank, excluding outliers and creating a dataset that only contains one GPS fix 
+every five minutes.
+
+The second script (2.code_hr_aov_dtd.R) provides the code to calculate home range (AKDE, question 1), the tendency for groups to use the same areas on consecutive days 
+(question 2) and daily travelled distance (question 3), using the ctmm package. The input data in this script is a data file that contains for each group, in each season, 
+one GPS fix every five minutes.
+
+The third script (3.code_sotg.R) calculates for each group in one season, the speed while travelling (question 4), using high resolution data (one GPS fix every second).
+
+The fourth script (4.GEEs_fitness.R) has as input data the Computed_seasonal_measurements.Rdata file, which has the same information as the Supplementary File 1A, 
+and calculates the GEEs for fitness, measured as the number of chicks in groups of various sizes. These GEEs are presented in Supplementary File 1F. 
+
+The fourth script (5.GEEs_hr_aov_dtd_sotg.R) has as input data the Computed_seasonal_measurements.Rdata file, which has the same data as the Supplementary File 1A, 
+and calculates all GEEs for questions 1-4, all of these GEEs are presented in the Supplementary Files 1B-1E. 
